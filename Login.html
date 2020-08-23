@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="photoes/icon.png">
+        <link rel="shortcut" href="photoes/icon.png">
+        <link rel="apple-touch-icon" href="photoes/icon.png">
+        <title>Sign up</title>
+        <style>
+            #content{
+                width: 1480px;
+                margin: auto;
+                background: whitesmoke;
+            }
+        </style>
+    </head>
+    <body id="content">
+        <center><h1 style="color: rgb(6, 6, 78);">Welcome</h1></center>
+        <form action="page.html">
+            <table>
+                <tr>
+                    <td>Enter your user name</td>
+                    <td><input type="text" minlength="4" maxlength="20" required name="username" oninvalid="error_name(this)" oninput="error_name(this)" /></td>
+                </tr>
+                <tr>
+                    <td><p> Enter your email </p></td>
+                    <td><p> <input type="email" required name="email" oninvalid="error_email(this)" oninput="error_email(this)" /> </p></td>
+                </tr>
+                <tr>
+                    <td>Enter your password</td>
+                    <td><input type="password" minlength="10" maxlength="25" required name="password" oninvalid="error_pass(this)" oninput="error_pass(this)"/></td>
+                </tr>
+                <tr>
+                    <td><p >Enter your birth day </p></td>
+                    <td><p> <input type="date" min="01-01-1920" max="01-01-2002" /> </p></td>
+                </tr>
+                <tr>
+                    <td><p>What is your gender </p></td>
+                    <td><p>male <input type="radio" name="gender" value="male"/></p></td>
+                    <td>female <input type="radio" name="gender" value="female"/></td>
+                </tr>
+                <tr>
+                    <td>Enter your phone number</td>
+                    <td><input type="number" name="phone number" /></td>
+                </tr>
+
+            </table>
+            <br>
+            <button type="reset" style="background: rgb(224, 57, 57);">reset</button>
+            <p> <button type="submit" style="background: rgb(255, 255, 255);">create</button> </p>
+            
+            
+         </form>
+        
+        <script>
+            function error_name(username){
+        if (username.value == '') {
+
+                username.setCustomValidity('enter a user name');
+            }  else if (username.validity.typeMismatch){
+
+                username.setCustomValidity('your name is wrong, enter another one');
+            }
+            else{ 
+
+		username.setCustomValidity('');}
+                return true;   
+            }
+
+            function error_email(email){
+        if (email.value == '') {
+
+                email.setCustomValidity('enter an email');
+            }  else if (email.validity.typeMismatch){
+
+                email.setCustomValidity('your email is wrong, enter another one');
+            }
+            else{ 
+
+		    email.setCustomValidity('');}
+                return true;   
+            }
+            function error_pass(password){
+        if (password.value == '') {
+
+                password.setCustomValidity('enter a password');
+            }  else if (password.validity.typeMismatch){
+
+                password.setCustomValidity('your password is wrong, enter another one');
+            }
+            else{ 
+
+		password.setCustomValidity('');}
+                return true;   
+            }
+
+        </script>
+
+    </body>
+</html>
